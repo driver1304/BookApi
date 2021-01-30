@@ -5,7 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pl.coderslab.model.Book;
-import pl.coderslab.model.BookService;
+import pl.coderslab.service.BookService;
+
 import java.util.List;
 
 @RestController

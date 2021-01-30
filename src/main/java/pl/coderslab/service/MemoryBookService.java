@@ -1,17 +1,13 @@
-package pl.coderslab.model;
+package pl.coderslab.service;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
+import pl.coderslab.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Component
-@Scope(value = WebApplicationContext.SCOPE_SESSION,
-        proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MemoryBookService implements BookService {
     private List<Book> books;
     private static Long nextId = 4L;

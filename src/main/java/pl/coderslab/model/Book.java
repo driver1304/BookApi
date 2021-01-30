@@ -1,13 +1,28 @@
 package pl.coderslab.model;
 
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Length(min = 13, max = 13)
+    @Range(min = 0)
     private String isbn;
+    @NotBlank
     private String title;
+    @NotBlank
     private String author;
+    @NotBlank
     private String publisher;
     private String type;
-
 
 
     public Book(Long id, String isbn, String title, String author, String publisher, String type) {
